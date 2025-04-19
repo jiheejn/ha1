@@ -90,5 +90,19 @@ class CalculatorTest {
 
 
     //TODO hier weitere Tests erstellen
+    @Test
+    @DisplayName("should be a positive number")
+    void testPressNegativeKeyTwice(){
+        Calculator calc = new Calculator();
+        calc.pressDigitKey(2);
+        calc.pressNegativeKey();
+        calc.pressNegativeKey();
+
+        String expected = "2";
+        String actual = calc.readScreen();
+
+        assertEquals(expected,actual);
+    }
+
 }
 
